@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autokorjaamo Hakola | Contact and service request</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <p><strong>Autokorjaamo Hakola</strong></p>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="listing.html">Services</a></li>
+                <li><a href="contact.html" aria-current="page">Contact and service request</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact and service request</h1>
+        <p>Use this form to tell us about your vehicle and the service you need.</p>
+        <p>We will call you to confirm the appointment time. Your preferred day is a request, not a confirmed booking.</p>
+
+        <section>
+            <h2>Online service request</h2>
+            <form id="service-request-form">
+                <p>
+                    <label for="customer-name">Your name (required)</label><br>
+                    <input type="text" id="customer-name" name="customer-name" autocomplete="name" required>
+                </p>
+
+                <p>
+                    <label for="registration">Vehicle registration number (required)</label><br>
+                    <input
+                        type="text"
+                        id="registration"
+                        name="registration"
+                        placeholder="ABC-123"
+                        pattern="[A-Za-z]{2,3}-?[0-9]{1,3}"
+                        minlength="5"
+                        maxlength="7"
+                        title="Enter a registration number, for example ABC-123. Do not enter a phone number here."
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="problem">What is wrong with the vehicle, or what work do you need? (required)</label><br>
+                    <textarea id="problem" name="problem" rows="5" cols="40" required></textarea>
+                </p>
+
+                <p>
+                    <label for="phone">Your phone number (required)</label><br>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                </p>
+
+                <p>
+                    <label for="email">Your email address (optional)</label><br>
+                    <input type="email" id="email" name="email" autocomplete="email">
+                </p>
+
+                <p>
+                    <label for="preferred-day">Preferred day (required)</label><br>
+                    <input type="date" id="preferred-day" name="preferred-day" required>
+                </p>
+
+                <p>
+                    <button type="submit">Check service request</button>
+                </p>
+            </form>
+            <p id="form-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>About sending this form</h2>
+            <p>This is the first version of the website. The form checks the information in your browser, but it does not send an email yet. The workshop's IT partner must connect it to the workshop's email address before real requests can be delivered.</p>
+        </section>
+
+        <section>
+            <h2>Appointment confirmation</h2>
+            <p>After receiving a service request, the workshop will call the customer to confirm the appointment time.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Autokorjaamo Hakola · Kauhava, Finland</p>
+    </footer>
+</body>
+</html>
